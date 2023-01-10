@@ -1,0 +1,905 @@
+/* 
+ * =============================================================================
+ * Author: Mark Angelo Angulo
+ * =============================================================================
+ */
+
+/* 
+ * -----------------------------------------------------------------------------
+ *  Variables
+ * -----------------------------------------------------------------------------
+ */
+
+:root {
+    --text-color: hsl(0, 0%, 20%);
+    --text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+}
+
+/* 
+ * -----------------------------------------------------------------------------
+ *  GRID
+ * -----------------------------------------------------------------------------
+ */
+
+h1 {
+    grid-area: h1;
+}
+
+nav {
+    grid-area: navigation;
+}
+
+#banner {
+    grid-area: banner;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+h1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 400px auto auto 50px;
+    grid-template-areas:
+        "banner"
+        "navigation"
+        "main"
+        "footer";
+}
+
+@keyframes rescale {
+    from {transform: scale(1.3);}
+    to {transform: scale(1);}
+}
+
+@keyframes enlarge {
+    from {transform: scale(1);}
+    to {transform: scale(1.3);}
+}
+
+/* 
+ * -----------------------------------------------------------------------------
+ *  STYLE
+ * -----------------------------------------------------------------------------
+ */
+
+html {
+    scroll-padding-top: 60px;
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    display: none;
+}
+
+#banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+#banner .tpl-parallax-background {
+    object-fit: cover;
+    width: 100%;
+    top: -150px;
+}
+
+#banner .tpl-parallax-foreground {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+}
+
+main {
+    position: relative;
+}
+
+main > section:not(:last-child) {
+    display: none;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+main > section:target ~ section {
+    display: none !important;
+}
+
+main > section:target {
+    display: block;
+    width: 100%;
+    min-height: 300px;
+}
+
+#intro {
+    grid-area: intro;
+}
+
+#map {
+    grid-area: map;
+}
+
+#scenarios {
+    grid-area: scenarios;
+}
+
+#numbers {
+    grid-area: numbers;
+}
+
+#harbors {
+    grid-area: harbors;
+}
+
+#tiles {
+    grid-area: tiles;
+}
+
+#filters {
+    grid-area: filters;
+}
+
+#trash {
+    grid-area: trash;
+}
+
+#map-generator {
+    display: grid;
+    grid-template-columns: auto 55% 30% auto;
+    grid-template-rows: auto auto auto 100px auto;
+    grid-template-areas:
+        ". intro scenarios ."
+        ". filters scenarios ."
+        ". trash numbers ."
+        ". map harbors ."
+        ". map tiles .";
+    padding: 2vw;
+}
+
+#map-generator > section {
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+    align-items: center;
+}
+
+#map {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    min-height: 100px;
+    min-width: 100px;
+    resize: both;
+    overflow: hidden;
+}
+
+#frame {
+    /*visibility: hidden;*/
+}
+
+#map-container {
+    position: absolute;
+}
+
+#frame {
+    width: 100%;
+    height: auto;
+}
+
+#map-container {
+    width: 100%;
+}
+
+#map-container > div {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#map #map-container {
+    margin-top: -.25%;
+    margin-left: .25%
+}
+
+#map.print #map-container > div:not(:first-child),
+#map #map-container > div:not(:first-child) {
+    margin-top: -4.2%;
+}
+
+#map #map-container .numbered-tile {
+    position: relative;
+    width: 14.6%;
+    height: auto;
+}
+
+#map-container .numbered-tile {
+    margin-right: .26%;
+}
+
+#map-container > div .tile {
+    width: 100%;
+    height: auto;
+}
+
+#map-container > div .number {
+    position: absolute;
+    width: 35%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 2;
+}
+
+#scenarios,
+#harbors,
+#tiles {
+    padding: 1rem;
+}
+
+#scenarios select {
+    width: 90%;
+    margin-top: .5rem;
+}
+
+#numbers {
+    padding: 0px 1rem;
+}
+
+#numbers > div,
+#harbors > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#numbers > div img {
+    width: 8%;
+    height: auto;
+}
+
+#harbors > div img {
+    width: 16%;
+    height: auto;
+}
+
+#tiles > div {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#tiles > div:not(:last-child) {
+    margin-bottom: -5.7%;
+}
+
+#tiles > div img {
+    width: 20%;
+    height: auto;
+}
+
+#map-container .numbered-tile .harbor {
+    position: absolute;
+    width: 60%;
+    z-index: 2;
+}
+
+#map-container .numbered-tile .harbor.top-left {
+    top: -27%;
+    left: -18%;
+    transform: rotate(150deg);
+}
+
+#map-container .numbered-tile .harbor.inner-top-left {
+    top: 9%;
+    left: 6%;
+    transform: rotate(-30deg);
+}
+
+#map-container .numbered-tile .harbor.top-right {
+    top: -27%;
+    right: -18%;
+    transform: rotate(-150deg);
+}
+
+#map-container .numbered-tile .harbor.inner-top-right {
+    top: 8%;
+    right: 5%;
+    transform: rotate(30deg);
+}
+
+#map-container .numbered-tile .harbor.left {
+    top: 29%;
+    left: -55%;
+    transform: rotate(90deg);
+}
+
+#map-container .numbered-tile .harbor.right {
+    top: 29%;
+    right: -55%;
+    transform: rotate(-90deg);
+}
+
+#map-container .numbered-tile .harbor.bottom-left {
+    bottom: -27%;
+    left: -18%;
+    transform: rotate(30deg);
+}
+
+#map-container .numbered-tile .harbor.bottom-right {
+    bottom: -27%;
+    right: -18%;
+    transform: rotate(-30deg);
+}
+
+#map-container .numbered-tile .chit {
+    position: absolute;
+    width: 30%;
+    z-index: 3;
+}
+
+#map-container .numbered-tile .chit.top-left {
+    left: 12%;
+}
+
+#map-container .numbered-tile .chit.top-right {
+    right: 12%;
+}
+
+#map-container .numbered-tile .chit.left {
+    top: 36%;
+    right: 85%;
+}
+
+#map-container .numbered-tile .chit.right {
+    top: 36%;
+    left: 85%;
+}
+
+#map-container .numbered-tile .chit.center {
+    top: 35%;
+    left: 35%;
+    z-index: 1;
+}
+
+#map-container .numbered-tile .number ~ .chit.center {
+    top: 35%;
+    left: 50%;
+    z-index: 1;
+}
+
+#map-container .numbered-tile .chit.bottom-left {
+    bottom: 2%;
+    left: 8%;
+}
+
+#map-container .numbered-tile .chit.bottom-right {
+    bottom: 2%;
+    right: 8%;
+}
+
+#numbers img {
+    margin-right: .2rem;
+}
+
+#trash {
+    justify-content: center;
+    padding: 0 1rem 1rem;
+}
+
+#trash img {
+    width: 4%;
+    height: auto;
+}
+
+#numbers img,
+#harbors img,
+#tiles img,
+#trash img {
+    animation: rescale .3s forwards;
+    z-index: 1;
+}
+
+#numbers img.active,
+#harbors img.active,
+#tiles img.active,
+#trash img.active {
+    animation: enlarge .3s forwards;
+    z-index: 2;
+}
+
+#map.seafarers-small #map-container,
+#map.seafarers-medium #map-container,
+#map.seafarers-large #map-container {
+    transform: rotate(-30deg);
+}
+
+#map.seafarers-small .number,
+#map.seafarers-medium .number,
+#map.seafarers-large .number {
+    transform: rotate(30deg) translateX(-70%) translateY(-20%);
+}
+
+#map.seafarers-small #map-container > div:first-child .numbered-tile:last-child,
+#map.seafarers-small #map-container > div:last-child .numbered-tile:first-child,
+#map.seafarers-medium #map-container > div:first-child .numbered-tile:last-child,
+#map.seafarers-medium #map-container > div:last-child .numbered-tile:first-child,
+#map.seafarers-large #map-container > div:first-child .numbered-tile:last-child,
+#map.seafarers-large #map-container > div:last-child .numbered-tile:first-child {
+    visibility: hidden;
+}
+
+/* small */
+#map.seafarers-small #map-container {
+    margin-top: 1%;
+    margin-left: 0%;
+}
+
+#map.print.seafarers-small #map-container > div:not(:first-child),
+#map.seafarers-small #map-container > div:not(:first-child) {
+    margin-top: -3.6%;
+}
+
+#map.seafarers-small #map-container .numbered-tile {
+    width: 12.7%;
+}
+
+/* medium */
+#map.seafarers-medium #map-container {
+    margin-top: -3%;
+    margin-left: 5.5%;
+}
+
+#map.print.seafarers-medium #map-container > div:not(:first-child),
+#map.seafarers-medium #map-container > div:not(:first-child) {
+    margin-top: -3.6%;
+}
+
+#map.seafarers-medium #map-container .numbered-tile {
+    width: 12.7%;
+}
+
+#map.seafarers-medium #map-container > div:nth-child(5) {
+    transform: translateX(-6.6%);
+}
+
+#map.seafarers-medium #map-container > div:nth-child(5) ~ div {
+    transform: translateX(-6.6%);
+}
+
+/* large */
+#map.seafarers-large #map-container {
+    margin-top: -5.8%;
+    margin-left: 11%;
+}
+
+#map.seafarers-large #map-container .numbered-tile {
+    width: 12.8%;
+}
+
+#map.print.seafarers-large #map-container > div:not(:first-child),
+#map.seafarers-large #map-container > div:not(:first-child) {
+    margin-top: -3.6%;
+}
+
+#map.seafarers-large #map-container > div:nth-child(5) {
+    transform: translateX(-6.4%);
+}
+
+#map.seafarers-large #map-container > div:nth-child(5) ~ div {
+    transform: translateX(-12.8%);
+}
+
+.tile.flipped::before {
+    content: '?';
+}
+
+#grid {
+    background-image: url('../img/ui/background.webp');
+    background-repeat: repeat-y;
+    background-size:contain;
+    background-position-y: 400px;
+}
+
+#main-navigation {
+    z-index: 1;
+}
+
+#main-navigation > ul {
+    background-image: url('../img/ui/bar.webp');
+    background-size: 100% 45px;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: visible;
+}
+
+#main-navigation li {
+    text-align: center;
+    min-width: 80px;
+}
+
+#main-navigation li > div {
+    padding: 0;
+}
+
+#main-navigation li.active > div {
+    background-color: transparent;
+}
+
+#main-navigation li > div > a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+#main-navigation li.active > div > a::after {
+    position: absolute;
+    top: -14px;
+    content: '';
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-left: -16px;
+    background-image: url('../img/ui/blue-ribbon.webp');
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+#main-navigation li > div > a > span {
+    font-weight: bold;
+    color: var(--text-color);
+    text-shadow: var(--text-shadow);
+}
+
+#main-navigation li.active > div > a > span {
+    color: var(--text-color-contrast-500);
+    text-shadow: none;
+}
+
+#main-navigation li.active > div > a > span {
+    position: relative;
+    z-index: 2;
+}
+
+
+#map-generator:target {
+    animation: fade-in 1s;
+}
+
+#defense-for-catan > section > h2,
+#map-generator > section > h2 {
+    
+    color: var(--text-color-contrast-500);
+    font-size: 1rem;
+    display: block;
+    
+    width: 100%;
+    padding: .4rem 1rem;
+    
+    background-image: url('../img/ui/heading.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+    margin-bottom: .4rem;
+    
+}
+
+#map-generator > #intro > h2,
+#map-generator > #filters > h2,
+#map-generator > #map > h2,
+#map-generator > #trash > h2 {
+    display: none;
+}
+
+#map-title {
+    
+    color: var(--text-color-contrast-500);
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: var(--text-shadow);
+    
+    width: 100%;
+    height: 100%;
+    min-height: 5rem;
+    
+    padding-top: .8rem;
+    
+    background-image: url('../img/ui/orange-ribbon.webp');
+    background-size: 100% 5rem;
+    background-repeat: no-repeat;
+    
+    margin: 1rem 0px;
+}
+
+.tpl-btn {
+    
+    color: var(--text-color);
+    font-weight: bold;
+    text-shadow: var(--text-shadow);
+    
+    border: none;
+    background-image: url('../img/ui/button.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+/*    min-width: 140px;*/
+    padding: .5rem 1rem;
+    
+    border-radius: .4rem;
+}
+
+.tpl-btn:focus,
+.tpl-btn:hover {
+    border: none;
+    background-color: transparent;
+    background-image: url('../img/ui/button.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#map-generator > #filters {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: .2rem;
+}
+
+#defense-intro {
+    grid-area: defense-intro;
+}
+
+#defense-rules {
+    grid-area: defense-rules;
+}
+
+#victory-points {
+    grid-area: victory-points;
+}
+
+#development-cards {
+    grid-area: development-cards;
+}
+
+#defense-costs {
+    grid-area: defense-costs;
+}
+
+#defense-for-catan {
+    grid-template-columns: auto 55% 35% auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        ". defense-intro victory-points ."
+        ". defense-intro development-cards ."
+        ". defense-rules defense-costs .";
+    padding: 2vw;
+}
+
+#defense-for-catan:target {
+    display: grid;
+    animation: fade-in 1s;
+}
+
+#defense-for-catan > section {
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#defense-for-catan > section p {
+    color: white;
+}
+
+#defense-for-catan > section > h2 {
+    display: block;
+}
+
+#defense-for-catan #defense-intro > h2 {
+    display: none;
+}
+
+#defense-for-catan #defense-intro > p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#defense-for-catan ul {
+    list-style-type: disc;
+    margin-left: 1rem;
+}
+
+#defense-for-catan #defense-intro img {
+    height: auto;
+    margin-top: 1rem;
+}
+
+#defense-for-catan #defense-rules {
+    align-items: flex-start;
+    justify-content: left;
+}
+
+#defense-rules > h2 {
+    max-width: 500px;
+}
+
+#defense-costs > div {
+    text-align: center;
+}
+
+#defense-costs > div > img {
+    margin-bottom: 1rem;
+}
+
+#contact:target {
+    display: flex;
+    animation: fade-in 1s;
+}
+
+#contact {
+    
+    flex-flow: column;
+    gap: 1rem;
+    
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+#contact form {
+    position: relative;
+    min-height: 400px;
+    height: auto;
+    max-width: 600px;
+    width: 100%;
+    background-image: url('../img/ui/contact-form.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 2rem;
+}
+
+#contact form::after {
+    content: '';
+    position: absolute;
+    right: -110px;
+    bottom: -20px;
+    display: inline-block;
+    height: 400px;
+    width: 200px;
+    background-image: url('../img/ui/pen.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#contact form .tpl-input {
+    width: 100%;
+    border-radius: .3rem;
+    padding: .8rem 1rem;
+}
+
+#contact form textarea {
+    resize: none;
+    padding: 1rem;
+}
+
+#contact form .tpl-form-label {
+    display: none;
+}
+
+#about {
+    flex-flow: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+#about:target {
+    display: flex;
+    animation: fade-in 1s;
+}
+
+#about > div {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    color: var(--text-color-contrast-500);
+}
+
+#about > div img {
+    width: 100%;
+    max-width: 370px;
+    padding: 1rem;
+    background-color: white;
+    margin-bottom: .5rem;
+}
+
+#defense-for-catan #defense-intro > .ribbon,
+#about .ribbon,
+#contact .ribbon {
+    color: var(--text-color-contrast-500);
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: var(--text-shadow);
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    min-height: 5rem;
+    padding-top: .8rem;
+    background-image: url('../img/ui/orange-ribbon.webp');
+    background-size: 100% 5rem;
+    background-repeat: no-repeat;
+}
+
+#defense-for-catan #defense-intro > .ribbon {
+    height: 100px;
+}
+
+#footer {
+    color: var(--text-color);
+    font-weight: bold;
+    text-shadow: var(--text-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/ui/bar.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.tpl-modal {
+    border: none;
+}
+
+.tpl-modal-header {
+    background-image: url('../img/ui/bar-long.webp');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tpl-modal-title {
+    text-align: center;
+    width: 100%;
+}
+
+.tpl-modal-body {
+    background-image: url('../img/ui/background.webp');
+    background-repeat: repeat-y;
+    background-size:contain;
+}
+
+.tpl-modal-body label span {
+    color: var(--text-color-contrast-500);
+}
+
+.tpl-modal-footer {
+    background-image: url('../img/ui/bar.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

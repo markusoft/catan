@@ -1,0 +1,398 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Settlers of Catan</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- icon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+        
+        <!-- safari icon -->
+        <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        
+        <!-- manifest -->
+        <link rel="manifest" href="manifest.json">
+        
+        <!-- normalize -->
+        <link rel="stylesheet" href="./assets/css/normalize.css">
+        <!-- fontello -->
+        <link rel="stylesheet" href="./plugins/fontello/css/fontello.css">
+        <link rel="stylesheet" href="./plugins/fontello/css/animation.css">
+        <!-- template -->
+        <link rel="stylesheet" href="./assets/css/template.css">
+        
+        <!-- dependecies -->
+        <script defer src="./assets/js/dependencies.js"></script>
+        <!-- template -->
+        <script defer src="./assets/js/tpl-config.js"></script>
+        <script defer src="./assets/js/tpl-mgelo.js"></script>
+        <!--<script defer src="./assets/js/main.js"></script>-->
+        
+        <!-- page style -->
+        <link rel="stylesheet" href="./css/catan.css">
+        <link rel="stylesheet" href="./css/catan-desktop.css">
+        <link rel="stylesheet" href="./css/catan-tablet.css">
+        
+        <!-- page script -->
+        <script defer src="./js/data.js"></script>
+        <script defer src="./js/catan.js"></script>
+		
+    </head>
+    <body>
+        <!--[if IE]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        
+        <div id="grid">
+            <h1>Settlers of Catan</h1>
+            
+            <div id="banner" class="banner tpl-parallax">
+                <img alt="Background" class="tpl-parallax-background" data-src="./assets/img/placeholders/rectangle.svg" src="./img/banner/background.webp" width="600" height="600" />
+                <img alt="Catan" data-src="./assets/img/placeholders/rectangle.svg" src="./img/banner/catan.webp" width="300" height="150" />
+            </div>
+            
+            <nav id="main-navigation">
+                <h2><span>Main Navigation</span></h2>
+                <ul class="tpl-menu drop-single">
+                    <li class="active"><div><a href="#map-generator"><span>Map</span></a></div></li>
+                    <li><div><a href="#defense-for-catan"><span>Defense</span></a></div></li>
+                    <li><div><a href="#contact"><span>Contact</span></a></div></li>
+                    <li><div><a href="#about"><span>About</span></a></div></li>
+                </ul>
+            </nav>
+            
+            <main>
+                
+                <section id="defense-for-catan">
+                    <h2>Defense for Catan</h2>
+                    
+                    <section id="defense-intro">
+                        <h2>Introduction</h2>
+                        <div class="ribbon">Defense for Catan</div>
+                        <p>Have you ever played Catan and Everyone is ganging up on you?<br />Then the probability of You Winning is probably Zero.</p>
+                        <p>Try playing Defense for Catan</p>
+                        <img src="./img/ui/walls-2.webp" alt="12" class="number" width="360" height="430">
+                    </section>
+                    
+                    <section id="defense-rules">
+                        <h2>Rules</h2>
+                        
+                        <ul id="list-rules">
+                            <li>
+                                <p>
+                                    A fence or a wall will protect the player from the robber.<br />
+                                   (A player will still receive a resource where robber is if they build a fence or a wall)
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Each player needs 15 pieces of walls same with roads.<br />
+                                   (Use popsicle sticks or cardboards use one side for fence and flip side for wall)
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    A fence will cost two woods.<br />
+                                   (Players can upgrade fence to a wall for greater protection)
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    A wall will cost a wood, a clay, and an ore.<br />
+                                   (Walls will be downgraded to a fence when the robber landed on that tile)
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    To upgrade a fence to a wall, a player can spend.<br />
+                                    a clay and an ore <br />
+                                    or <br />
+                                    two ores
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Two new development cards wall building.<br />
+                                    Place two new fences as if you bought them.<br />
+                                    Or place single wall as if you bought a fence and upgraded it to a wall.<br />
+                                    Or upgrade two already existing fences to walls.<br />
+                                    Or place a new fence and upgrade a separate already existing fence to a wall.<br />
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    When a seven is diced.<br />
+                                    The player with fence on the tile where the the robber lands won't have any cards stolen from hand but a fence stolen instead.<br />
+                                    (Place stolen fences on a dessert tile)<br />
+                                    The player with wall on the tile where the the robber lands will have their wall downgraded to a fence, no card will be stolen from hand.<br />
+                                    (Downgraded wall counts as one stolen fence)
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Once the robber stole seven fences it learns the skill "wall jump".<br />
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Once the robber learns "wall jump".<br />
+                                    Fences will no longer be stolen.<br />
+                                    Fences can no longer protect the player and a resource card will be stolen from hand when robbed.<br />
+                                    Fences can no longer protect the player and will not receive a resource where robber is when diced.<br />
+                                    Walls can still protect the player, will be downgraded to fence when robbed and no card will be stolen from hand.<br />
+                                    Walls can still protect the player and will still receive a resource where the robber is when diced.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Players can use a knight card to move the robber and steal a fence.<br />
+                                    (Players can also use a knight card to move the robber and downgrade a wall)
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    A player can build or upgrade a fence where the robber is currently at.<br />
+                                    (This way the player can still get a resource where the robber is when diced)
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    A player with three walls (not fence) on a single settlement or city will earn the title "strong hold" for 2 victory points.<br />
+                                    (Strong hold settlement or city walls can no longer be downgraded nor cards stolen from hand)
+                                </p>
+                            </li>
+                            <li>
+                                <p>Breaking the title "strong hold".<br />
+                                The player with most walls will receive the title "strong hold" if players has equal number of strong holds.<br />
+                                E.g. the player with two strong holds and three separate walls will beat the player with two strong holds and two separate walls.<br />
+                                The player with more strong holds will receive the title "strong hold" than the player with more walls.<br />
+                                E.g. the player with two strong holds will beat the player with one strong hold and 5 separate walls.
+                                </p>
+                            </li>
+                        </ul>
+                        
+                    </section>
+                    
+                    <section id="victory-points">
+                        <h2>Victory Points</h2>
+                        <div>
+                            <img src="./img/defense/strong-hold.webp" alt="12" class="number" width="235" height="286">
+                        </div>
+                    </section>
+                    
+                    <section id="development-cards">
+                        <h2>Development Cards</h2>
+                        <div>
+                            <img src="./img/defense/wall-building.webp" alt="12" class="number" width="160" height="230">
+                            <img src="./img/defense/wall-building.webp" alt="12" class="number" width="160" height="230">
+                        </div>
+                    </section>
+                    
+                    <section id="defense-costs">
+                        <h2>Defense Costs</h2>
+                        <div>
+                            <img src="./img/defense/orange-defense-cost.webp" alt="12" class="number" width="235" height="286">
+                            <img src="./img/defense/red-defense-cost.webp" alt="12" class="number" width="235" height="286">
+                            <img src="./img/defense/blue-defense-cost.webp" alt="12" class="number" width="235" height="286">
+                            <img src="./img/defense/white-defense-cost.webp" alt="12" class="number" width="235" height="286">
+                        </div>
+                    </section>
+                </section>
+                
+                <section id="about">
+                    <h2>About</h2>
+                    
+                    <div class="ribbon">About Us</div>
+                    
+                    <div>
+                        We are Catanians
+                    </div>
+                    
+                    <div>
+                        <img src="./img/about/catanians-1.webp" alt="12" width="370" height="260">
+                        <img src="./img/about/catanians-2.webp" alt="12" width="370" height="260">
+                        <img src="./img/about/catanians-3.webp" alt="12" width="370" height="260">
+                        <img src="./img/about/catanians-4.webp" alt="12" width="370" height="260">
+                    </div>
+                    
+                </section>
+                
+                <section id="contact">
+                    <h2>Contact</h2>
+                    
+                    <div class="ribbon">Contact Us</div>
+                    
+                    <form id="form-contact" class="tpl-form" method="post">
+                        <ul class="tpl-form-list">
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="contact-name">Name</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="text" id="contact-name" name="name" class="tpl-input" placeholder="Name" />
+                                </div>
+                            </li>
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="contact-email">Email</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="email" id="contact-email" name="email" class="tpl-input" placeholder="Email" />
+                                </div>
+                            </li>
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="contact-message">Message</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <textarea rows="12" id="contact-message" name="message" class="tpl-input" placeholder="Message"></textarea>
+                                </div>
+                            </li>
+                            <li class="tpl-form-submit">
+                                <input type="submit" class="tpl-btn" value="Send Message" />
+                            </li>
+                        </ul>
+                    </form>
+                </section>
+                
+                <section id="map-generator">
+                    <h2>Map Generator</h2>
+                    
+                    <section id="intro">
+                        <h2>Introduction</h2>
+                        <div id="map-title">Map Generator</div>
+                    </section>
+                    
+                    <section id="map">
+                        <h2>Map</h2>
+                        <img id="frame" alt="frame" src="./img/scenarios/catan.webp" />
+                        <div id="map-container"></div>
+                    </section>
+                    
+                    <section id="scenarios">
+                        <h2>Scenarios</h2>
+                        
+                        <select name="frame" class="tpl-input">
+                            <option value="" selected="selected" disabled="disabled">-- Select Map --</option>
+                            <option value="catan">Catan</option>
+                            <option value="seafarers">Seafarers</option>
+                        </select>
+                        
+                        <select name="predefined" class="tpl-input">
+                            <option value="" selected="selected" disabled="disabled">-- Select Predefined Map --</option>
+                        </select>
+                        
+                    </section>
+                    
+                    <section id="numbers">
+                        <h2>Numbers</h2>
+                        <div>
+                            <img src="./img/numbers/flipped.webp" alt="2" class="number flipped" width="50" height="50">
+                            <img src="./img/numbers/2.webp" alt="2" class="number" width="50" height="50">
+                            <img src="./img/numbers/3.webp" alt="3" class="number" width="50" height="50">
+                            <img src="./img/numbers/4.webp" alt="4" class="number" width="50" height="50">
+                            <img src="./img/numbers/5.webp" alt="5" class="number" width="50" height="50">
+                            <img src="./img/numbers/6.webp" alt="6" class="number" width="50" height="50">
+                            <img src="./img/numbers/8.webp" alt="8" class="number" width="50" height="50">
+                            <img src="./img/numbers/9.webp" alt="9" class="number" width="50" height="50">
+                            <img src="./img/numbers/10.webp" alt="10" class="number" width="50" height="50">
+                            <img src="./img/numbers/11.webp" alt="11" class="number" width="50" height="50">
+                            <img src="./img/numbers/12.webp" alt="12" class="number" width="50" height="50">
+                            <img src="./img/numbers/chit.webp" alt="12" class="chit" width="50" height="50">
+                        </div>
+                    </section>
+                    
+                    <section id="harbors">
+                        <h2>Harbors</h2>
+                        <div>
+                            <img src="./img/harbors/flipped.webp" alt="Harbor" class="harbor flipped" width="100" height="80" />
+                            <img src="./img/harbors/2-1-wood.webp" alt="Wood Harbor" class="harbor" width="100" height="80" />
+                            <img src="./img/harbors/2-1-clay.webp" alt="Clay Harbor" class="harbor" width="100" height="80" />
+                            <img src="./img/harbors/2-1-sheep.webp" alt="Sheep Harbor" class="harbor" width="100" height="80" />
+                            <img src="./img/harbors/2-1-wheat.webp" alt="Wheat Harbor" class="harbor" width="100" height="80" />
+                            <img src="./img/harbors/2-1-ore.webp" alt="Ore Harbor" class="harbor" width="100" height="80" />
+                            <img src="./img/harbors/3-1.webp" alt="Generic Harbor" class="harbor" width="100" height="80" />
+                        </div>
+                    </section>
+
+                    <section id="tiles">
+                        <h2>Tiles</h2>
+                        
+                        <div id="woods">
+                            <img alt="Wood" class="tile" src="./img/tiles/wood-1.webp" width="100" height="120" />
+                            <img alt="Wood" class="tile" src="./img/tiles/wood-2.webp" width="100" height="120" />
+                            <img alt="Wood" class="tile" src="./img/tiles/wood-3.webp" width="100" height="120" />
+                            <img alt="Wood" class="tile" src="./img/tiles/wood-4.webp" width="100" height="120" />
+                        </div>
+                        
+                        <div id="clays">
+                            <img alt="Clay" class="tile" src="./img/tiles/clay-1.webp" width="100" height="120" />
+                            <img alt="Clay" class="tile" src="./img/tiles/clay-2.webp" width="100" height="120" />
+                            <img alt="Clay" class="tile" src="./img/tiles/clay-3.webp" width="100" height="120" />
+                        </div>
+                        
+                        <div id="sheeps">
+                            <img alt="Sheep" class="tile" src="./img/tiles/sheep-1.webp" width="100" height="120" />
+                            <img alt="Sheep" class="tile" src="./img/tiles/sheep-2.webp" width="100" height="120" />
+                            <img alt="Sheep" class="tile" src="./img/tiles/sheep-3.webp" width="100" height="120" />
+                            <img alt="Sheep" class="tile" src="./img/tiles/sheep-4.webp" width="100" height="120" />
+                        </div>
+                        
+                        <div id="ores">
+                            <img alt="Ore" class="tile" src="./img/tiles/ore-1.webp" width="100" height="120" />
+                            <img alt="Ore" class="tile" src="./img/tiles/ore-2.webp" width="100" height="120" />
+                            <img alt="Ore" class="tile" src="./img/tiles/ore-3.webp" width="100" height="120" />
+                        </div>
+                        
+                        <div id="wheats">
+                            <img alt="Wheat" class="tile" src="./img/tiles/wheat-1.webp" width="100" height="120" />
+                            <img alt="Wheat" class="tile" src="./img/tiles/wheat-2.webp" width="100" height="120" />
+                            <img alt="Wheat" class="tile" src="./img/tiles/wheat-3.webp" width="100" height="120" />
+                            <img alt="Wheat" class="tile" src="./img/tiles/wheat-4.webp" width="100" height="120" />
+                        </div>
+                        
+                        <div id="others">
+                            <img alt="Gold" class="tile" src="./img/tiles/gold.webp" width="100" height="120" />
+                            <img alt="Dessert" class="tile" src="./img/tiles/dessert.webp" width="100" height="120" />
+                            <img alt="Gold" class="tile" src="./img/tiles/gold-2.webp" width="100" height="120" />
+                        </div>
+                        
+                        <div id="waters">
+                            <img alt="Water" class="tile" src="./img/tiles/water.webp" width="100" height="120" />
+                            <img alt="Flip" class="tile flipped" src="./img/tiles/flipped.webp" width="100" height="120" />
+                        </div>
+
+                    </section>
+                    
+                    <section id="trash">
+                        <h2>Trash</h2>
+                        <img alt="Trash" id="trashcan" class="trash" src="./img/ui/trash.webp" width="30" height="40" />
+                    </section>
+                    
+                    <section id="filters">
+                        <h2>Filters</h2>
+                        <button id="shuffle" class="tpl-btn" value="Random" disabled="disabled">Shuffle</button>
+                        <button id="random" class="tpl-btn" value="Random" disabled="disabled">Random</button>
+                        <button id="save-map" class="tpl-btn" value="Save" disabled="disabled">Save</button>
+                        <button id="delete-map" class="tpl-btn" value="Delete" disabled="disabled">Delete </button>
+                        <button id="save-image" class="tpl-btn" value="Print" disabled="disabled">Download</button>
+                    </section>
+
+                </section>
+
+            </main>
+            
+            <footer id="footer">
+                2022
+            </footer>
+        </div>
+        
+    </body>
+</html>

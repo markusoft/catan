@@ -1,0 +1,66 @@
+/* 
+ * =============================================================================
+ * Author: Mark Angelo Angulo
+ * =============================================================================
+ */
+
+@media only screen and (max-width: 991px) {
+    
+/* 
+ * -----------------------------------------------------------------------------
+ *  GRID
+ * -----------------------------------------------------------------------------
+ */
+
+#map-generator {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-template-areas:
+        "intro"
+        "filters"
+        "scenarios"
+        "numbers"
+        "harbors"
+        "trash"
+        "map"
+        "tiles";
+    
+    padding: 2vw;
+}
+
+#defense-for-catan {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+        "defense-intro"
+        "defense-rules"
+        "victory-points"
+        "development-cards"
+        "defense-costs";
+    padding: 2vw;
+}
+    
+/*
+ * -----------------------------------------------------------------------------
+ *  POSITION
+ * -----------------------------------------------------------------------------
+ */
+
+
+/* 
+ * -----------------------------------------------------------------------------
+ *  STYLE
+ * -----------------------------------------------------------------------------
+ */
+#map #map-container > div:not(:first-child) {
+    margin-top: -4.6%;
+}
+
+#map.seafarers-small #map-container > div:not(:first-child),
+#map.seafarers-medium #map-container > div:not(:first-child),
+#map.seafarers-large #map-container > div:not(:first-child) {
+    margin-top: -4.1%;
+}
+
+}
